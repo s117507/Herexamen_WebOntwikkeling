@@ -22,10 +22,11 @@ export default function loginRouter() {
 
     router.get("/logout", (req, res) => {
         res.clearCookie("jwt")
-        res.redirect("/login");
+        res.redirect("login");
     });
 
     router.get("/register", (req, res) => {
+        res.render("register");
     });
 
     router.post("/register", async(req, res) => {

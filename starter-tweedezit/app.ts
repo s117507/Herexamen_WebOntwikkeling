@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import dotenv from "dotenv";
 import path from "path";
-import authRouter from "./router/authRouter";
+import loginRouter from "./router/authRouter";
 import rootRouter from "./router/rootRouter";
 
 dotenv.config();
@@ -16,14 +16,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 
 app.set("port", process.env.PORT ?? 3000);
+
 app.use("/", rootRouter());
-
-authRouter()
-
-app.get("/",(req,res)=>{
-    rootRouter()
-    authRouter()
-    res.render("index");
-  });
+app.use("/auth", loginRouter());
 
 export default app;
