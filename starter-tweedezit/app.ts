@@ -24,11 +24,6 @@ app.get("/",(req,res)=>{
     rootRouter()
     authRouter()
     res.render("index");
-  })
-
-app.get("/",(req,res)=>{
-res.render("index");
-})
-
+  });
 
 export default app;
