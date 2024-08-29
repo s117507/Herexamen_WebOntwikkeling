@@ -41,14 +41,16 @@
                 </tr>
             </thead>
             <tbody>
+                <!---<% for(let serie of series) { %>
                 <tr>
-                    <td>Dummy Series 1</td>
-                    <td><a href="<% data.url %>">https://www.dummyseries1.com</a></td>
-                    <td>This is a dummy series 1</td>
-                    <td>8.5</td>
-                    <td>Action</td>
+                    <td><% serie.title %></td>
+                    <td><a href="<% serie.url %>"><% serie.url %></a></td>
+                    <td><% serie.description %></td>
+                    <td><% serie.rating %></td>
+                    <td><% serie.genre %></td>
                     <td><button formaction="/increaseRating/60d5ec49c9e77a6f1df829b1">Increase</button></td>
                 </tr>
+                <% } %> --->
                 <tr>
                     <td>Dummy Series 2</td>
                     <td><a href="https://www.dummyseries2.com">https://www.dummyseries2.com</a></td>

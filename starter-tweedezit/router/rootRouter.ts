@@ -7,10 +7,14 @@ export default function rootRouter() {
     const router = express.Router();
 
     router.get("/", async(req, res) => {
+        try {
         const response = await fetch('https://raw.githubusercontent.com/similonap/json/master/series.json');
-        const data : Series[] = await response.json();
+        const series : Series[] = await response.json();
+        } catch (error: any) {
+        console.log(error);
+        }
         res.render("index", {
-            data
+            series: series
         }
         );
     });
